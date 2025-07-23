@@ -56,7 +56,7 @@ pub fn create_default_config_file() -> Result<()> {
     default_config_file.write_all(DEFAULT_CONFIG_FILE.as_bytes())
 }
 
-pub fn read_config_to_string() -> Result<String> {
+pub fn read_config_to_string() -> String {
     let config_file_path = config_file_path();
 
     if !exists(&config_file_path).unwrap() {
@@ -75,5 +75,6 @@ pub fn read_config_to_string() -> Result<String> {
         }
     }
 
-    read_to_string(config_file_path)
+    // It is safe to unwrap beacuse the situatio has already been handled
+    read_to_string(config_file_path).unwrap()
 }

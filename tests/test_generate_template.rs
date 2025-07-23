@@ -1,8 +1,8 @@
-use boilertex::tex::{Documentclass, General, TeXDocument, TeXPackage, TeXTemplate};
+use boilertex::tex::{Config, Documentclass, General, TeXPackage, TeXTemplate};
 use pretty_assertions::assert_eq;
 use std::collections::HashMap;
 
-const EXAMPLE_TOML_DOCUMENT: &'static str = r#"
+const _EXAMPLE_TOML_DOCUMENT: &'static str = r#"
 [general]
 draft = true
 main_file_name = "main.tex"
@@ -23,10 +23,10 @@ packages = [
 
 #[test]
 fn generate_template() {
-    let serialized_document: TeXDocument = TeXDocument::new(EXAMPLE_TOML_DOCUMENT);
-    let default_document: TeXDocument = TeXDocument::default();
+    let serialized_document: Config = Config::new();
+    let default_document: Config = Config::default();
 
-    let test_document: TeXDocument = TeXDocument {
+    let test_document: Config = Config {
         general_options: General {
             draft: true,
             main_file_name: "main.tex".to_string(),

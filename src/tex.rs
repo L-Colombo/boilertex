@@ -1,8 +1,9 @@
+use crate::config::read_config_to_string;
 use serde_derive::Deserialize;
 use std::collections::HashMap;
 
 #[derive(Deserialize, Debug, PartialEq, Eq)]
-pub struct TeXDocument {
+pub struct Config {
     #[serde(rename = "general")]
     pub general_options: General,
 
@@ -10,9 +11,9 @@ pub struct TeXDocument {
     pub templates: HashMap<String, TeXTemplate>,
 }
 
-impl TeXDocument {
-    pub fn new(s: &'static str) -> TeXDocument {
-        if let Ok(document) = toml::from_str(s) {
+impl Config {
+    pub fn new() -> Config {
+        if let Ok(document) = toml::from_str(read_config_to_string().as_str()) {
             document
         } else {
             Self::default()
@@ -20,9 +21,9 @@ impl TeXDocument {
     }
 }
 
-impl Default for TeXDocument {
+impl Default for Config {
     fn default() -> Self {
-        TeXDocument {
+        Config {
             general_options: General {
                 draft: true,
                 main_file_name: "main.tex".to_string(),
