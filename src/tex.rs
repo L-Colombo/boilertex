@@ -1,6 +1,6 @@
 use crate::config::read_config_to_string;
 use serde_derive::Deserialize;
-use std::collections::HashMap;
+use std::{collections::HashMap, fmt::Display};
 
 #[derive(Deserialize, Debug, PartialEq, Eq)]
 pub struct Config {
@@ -74,6 +74,21 @@ pub struct TeXPackage {
     pub pkg_opts: Option<Vec<String>>,
 }
 
+impl Display for TeXPackage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        if let Some(pkg_opts) = &self.pkg_opts {
+            write!(
+                f,
+                "\\usepackage[{}]{{{}}}",
+                pkg_opts.join(", "),
+                self.pkg_name
+            )
+        } else {
+            write!(f, "\\usepackage{{{}}}", self.pkg_name)
+        }
+    }
+}
+
 #[derive(Deserialize, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Documentclass {
     pub class: String,
@@ -86,4 +101,49 @@ pub struct General {
     pub main_file_name: String,
     pub papersize: String,
     pub textsize: String,
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::tex::*;
+    use pretty_assertions::assert_eq;
+
+    #[test]
+    fn test_texpackage_no_opts() {
+        let expected = String::from("\\usepackage{graphicx}");
+
+        let actual = TeXPackage {
+            pkg_name: String::from("graphicx"),
+            pkg_opts: None,
+        };
+
+        assert_eq!(expected, actual.to_string())
+    }
+
+    #[test]
+    fn test_texpackage_one_opt() {
+        let expected = String::from("\\usepackage[T1]{fontenc}");
+
+        let actual = TeXPackage {
+            pkg_name: "fontenc".to_string(),
+            pkg_opts: Some(vec!["T1".to_string()]),
+        };
+
+        assert_eq!(expected, actual.to_string())
+    }
+
+    #[test]
+    fn test_texpackage_multiple_opt() {
+        let expected = String::from("\\usepackage[hidelinks, hypertexnames=false]{hyperref}");
+
+        let actual = TeXPackage {
+            pkg_name: "hyperref".to_string(),
+            pkg_opts: Some(vec![
+                "hidelinks".to_string(),
+                "hypertexnames=false".to_string(),
+            ]),
+        };
+
+        assert_eq!(expected, actual.to_string())
+    }
 }
