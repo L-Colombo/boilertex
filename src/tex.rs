@@ -1,5 +1,3 @@
-///! This module contains data structure that represent the components
-///! inside of a LaTeX file
 use serde_derive::Deserialize;
 use std::collections::HashMap;
 
