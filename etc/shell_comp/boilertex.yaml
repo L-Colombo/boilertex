@@ -1,0 +1,33 @@
+name: boilertex
+description: Generate TeX project boilerplate
+flags:
+  -h, --help: Print help (see more with '--help')
+  -V, --version: Print version
+commands:
+- name: generate
+  aliases:
+  - g
+  - gen
+  description: Generate boilerplate from a template
+  flags:
+    -g, --git: Also initialize a Git repository with a default gitignore
+    -h, --help: Print help
+- name: list
+  description: ''
+  flags:
+    -h, --help: Print help
+- name: preview
+  description: ''
+  flags:
+    -h, --help: Print help
+- name: help
+  description: Print this message or the help of the given subcommand(s)
+  commands:
+  - name: generate
+    description: Generate boilerplate from a template
+  - name: list
+    description: ''
+  - name: preview
+    description: ''
+  - name: help
+    description: Print this message or the help of the given subcommand(s)

@@ -1,0 +1,19 @@
+.ie \n(.g .ds Aq \(aq
+.el .ds Aq '
+.TH boilertex-generate 1  "boilertex-generate " 
+.SH NAME
+boilertex\-generate \- Generate boilerplate from a template
+.SH SYNOPSIS
+\fBboilertex generate\fR [\fB\-g\fR|\fB\-\-git\fR] [\fB\-h\fR|\fB\-\-help\fR] <\fITEMPLATE\fR> 
+.SH DESCRIPTION
+Generate boilerplate from a template
+.SH OPTIONS
+.TP
+\fB\-g\fR, \fB\-\-git\fR
+Also initialize a Git repository with a default gitignore
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Print help
+.TP
+<\fITEMPLATE\fR>
+The name of the template to be produced
