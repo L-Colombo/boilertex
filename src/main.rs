@@ -1,6 +1,3 @@
-#![allow(dead_code)]
-#![allow(unused_variables)]
-
 use boilertex::{
     cli::{Cli, Commands},
     cmds::{genrate_template, list_templates, preview_template},
