@@ -16,6 +16,7 @@ impl Config {
         if let Ok(document) = toml::from_str(read_config_to_string().as_str()) {
             document
         } else {
+            println!("There are some problems with your config!\nUsing the default one");
             Self::default()
         }
     }

@@ -8,7 +8,6 @@ use std::{
 };
 
 const DEFAULT_CONFIG_FILE: &str = r#"[general]
-draft = true
 main_file_name = "main.tex"
 papersize = "letterpaper"
 textsize = "12pt"
