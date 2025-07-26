@@ -4,7 +4,6 @@ use std::collections::HashMap;
 
 const _EXAMPLE_TOML_DOCUMENT: &'static str = r#"
 [general]
-draft = true
 main_file_name = "main.tex"
 papersize = "letterpaper"
 textsize = "12pt"
@@ -28,7 +27,6 @@ fn generate_template() {
 
     let test_document: Config = Config {
         general_options: General {
-            draft: true,
             main_file_name: "main.tex".to_string(),
             papersize: "letterpaper".to_string(),
             textsize: "12pt".to_string(),

@@ -25,7 +25,6 @@ impl Default for Config {
     fn default() -> Self {
         Config {
             general_options: General {
-                draft: true,
                 main_file_name: "main.tex".to_string(),
                 papersize: "letterpaper".to_string(),
                 textsize: "12pt".to_string(),
@@ -97,7 +96,6 @@ pub struct Documentclass {
 
 #[derive(Deserialize, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct General {
-    pub draft: bool,
     pub main_file_name: String,
     pub papersize: String,
     pub textsize: String,
