@@ -1,4 +1,5 @@
 use crate::{cli::GenerateArgs, tex::Config};
+use bat::PrettyPrinter;
 use colored::Colorize;
 use std::{
     fs::OpenOptions,
@@ -51,8 +52,10 @@ pub fn preview_template(cfg: Config, template: String) {
     // if it fails, let the error bubble up
     let out: String = output_template(&cfg, &template).unwrap();
     println!("Showing template `{}`:\n", &template.green());
-    // TODO: maybe use bat under the hood to colorize it
-    println!("{out}")
+    let _ = PrettyPrinter::new()
+        .input_from_bytes(out.as_bytes())
+        .language("tex")
+        .print();
 }
 
 fn output_template(cfg: &Config, template_name: &String) -> std::io::Result<String> {

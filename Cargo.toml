@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+bat = { version = "0.25.0", default-features = false, features = ["regex-fancy"] }
 clap = { version = "4.5.41", features = ["derive"] }
 clap_allgen = "0.2.1"
 colored = "3.0.0"
