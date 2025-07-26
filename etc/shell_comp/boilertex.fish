@@ -27,14 +27,14 @@ end
 complete -c boilertex -n "__fish_boilertex_needs_command" -s h -l help -d 'Print help (see more with \'--help\')'
 complete -c boilertex -n "__fish_boilertex_needs_command" -s V -l version -d 'Print version'
 complete -c boilertex -n "__fish_boilertex_needs_command" -f -a "generate" -d 'Generate boilerplate from a template'
-complete -c boilertex -n "__fish_boilertex_needs_command" -f -a "list"
-complete -c boilertex -n "__fish_boilertex_needs_command" -f -a "preview"
+complete -c boilertex -n "__fish_boilertex_needs_command" -f -a "list" -d 'List the templates in your config'
+complete -c boilertex -n "__fish_boilertex_needs_command" -f -a "preview" -d 'Preview the output of some template'
 complete -c boilertex -n "__fish_boilertex_needs_command" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
 complete -c boilertex -n "__fish_boilertex_using_subcommand generate" -s g -l git -d 'Also initialize a Git repository with a default gitignore'
 complete -c boilertex -n "__fish_boilertex_using_subcommand generate" -s h -l help -d 'Print help'
 complete -c boilertex -n "__fish_boilertex_using_subcommand list" -s h -l help -d 'Print help'
 complete -c boilertex -n "__fish_boilertex_using_subcommand preview" -s h -l help -d 'Print help'
 complete -c boilertex -n "__fish_boilertex_using_subcommand help; and not __fish_seen_subcommand_from generate list preview help" -f -a "generate" -d 'Generate boilerplate from a template'
-complete -c boilertex -n "__fish_boilertex_using_subcommand help; and not __fish_seen_subcommand_from generate list preview help" -f -a "list"
-complete -c boilertex -n "__fish_boilertex_using_subcommand help; and not __fish_seen_subcommand_from generate list preview help" -f -a "preview"
+complete -c boilertex -n "__fish_boilertex_using_subcommand help; and not __fish_seen_subcommand_from generate list preview help" -f -a "list" -d 'List the templates in your config'
+complete -c boilertex -n "__fish_boilertex_using_subcommand help; and not __fish_seen_subcommand_from generate list preview help" -f -a "preview" -d 'Preview the output of some template'
 complete -c boilertex -n "__fish_boilertex_using_subcommand help; and not __fish_seen_subcommand_from generate list preview help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'

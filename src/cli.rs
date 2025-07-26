@@ -24,7 +24,11 @@ pub enum Commands {
     /// Generate boilerplate from a template
     #[clap(aliases = &["g", "gen"])]
     Generate(GenerateArgs),
+    /// List the templates in your config
+    #[clap(alias = "l")]
     List, // No arguments here are needed
+    /// Preview the output of some template
+    #[clap(alias = "p")]
     Preview(PreviewArgs),
 }
 

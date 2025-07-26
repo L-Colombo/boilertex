@@ -13,10 +13,12 @@ module completions {
     --help(-h)                # Print help
   ]
 
+  # List the templates in your config
   export extern "boilertex list" [
     --help(-h)                # Print help
   ]
 
+  # Preview the output of some template
   export extern "boilertex preview" [
     template: string          # The name of the template to be previewed
     --help(-h)                # Print help
@@ -30,9 +32,11 @@ module completions {
   export extern "boilertex help generate" [
   ]
 
+  # List the templates in your config
   export extern "boilertex help list" [
   ]
 
+  # Preview the output of some template
   export extern "boilertex help preview" [
   ]
 

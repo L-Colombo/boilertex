@@ -23,8 +23,8 @@ set edit:completion:arg-completer[boilertex] = {|@words|
             cand -V 'Print version'
             cand --version 'Print version'
             cand generate 'Generate boilerplate from a template'
-            cand list 'list'
-            cand preview 'preview'
+            cand list 'List the templates in your config'
+            cand preview 'Preview the output of some template'
             cand help 'Print this message or the help of the given subcommand(s)'
         }
         &'boilertex;generate'= {
@@ -43,8 +43,8 @@ set edit:completion:arg-completer[boilertex] = {|@words|
         }
         &'boilertex;help'= {
             cand generate 'Generate boilerplate from a template'
-            cand list 'list'
-            cand preview 'preview'
+            cand list 'List the templates in your config'
+            cand preview 'Preview the output of some template'
             cand help 'Print this message or the help of the given subcommand(s)'
         }
         &'boilertex;help;generate'= {

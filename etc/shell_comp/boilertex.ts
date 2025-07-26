@@ -20,7 +20,8 @@ const completion: Fig.Spec = {
       },
     },
     {
-      name: "list",
+      name: ["list", "l"],
+      description: "List the templates in your config",
       options: [
         {
           name: ["-h", "--help"],
@@ -29,7 +30,8 @@ const completion: Fig.Spec = {
       ],
     },
     {
-      name: "preview",
+      name: ["preview", "p"],
+      description: "Preview the output of some template",
       options: [
         {
           name: ["-h", "--help"],
@@ -50,9 +52,11 @@ const completion: Fig.Spec = {
         },
         {
           name: "list",
+          description: "List the templates in your config",
         },
         {
           name: "preview",
+          description: "Preview the output of some template",
         },
         {
           name: "help",

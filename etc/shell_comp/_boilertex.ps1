@@ -26,8 +26,8 @@ Register-ArgumentCompleter -Native -CommandName 'boilertex' -ScriptBlock {
             [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Print version')
             [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Print version')
             [CompletionResult]::new('generate', 'generate', [CompletionResultType]::ParameterValue, 'Generate boilerplate from a template')
-            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'list')
-            [CompletionResult]::new('preview', 'preview', [CompletionResultType]::ParameterValue, 'preview')
+            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'List the templates in your config')
+            [CompletionResult]::new('preview', 'preview', [CompletionResultType]::ParameterValue, 'Preview the output of some template')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
@@ -50,8 +50,8 @@ Register-ArgumentCompleter -Native -CommandName 'boilertex' -ScriptBlock {
         }
         'boilertex;help' {
             [CompletionResult]::new('generate', 'generate', [CompletionResultType]::ParameterValue, 'Generate boilerplate from a template')
-            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'list')
-            [CompletionResult]::new('preview', 'preview', [CompletionResultType]::ParameterValue, 'preview')
+            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'List the templates in your config')
+            [CompletionResult]::new('preview', 'preview', [CompletionResultType]::ParameterValue, 'Preview the output of some template')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
