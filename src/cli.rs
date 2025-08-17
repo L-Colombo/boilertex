@@ -10,7 +10,7 @@ const STYLES: styling::Styles = styling::Styles::styled()
 #[command(name = "boilertex")]
 #[command(
     about = "Generate TeX project boilerplate",
-    long_about = "A utility to declaratively create boilerplate from templates",
+    long_about = "A utility to declaratively create LaTeX boilerplate from templates",
     styles = STYLES,
     version,
 )]
