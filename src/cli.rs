@@ -7,10 +7,10 @@ const STYLES: styling::Styles = styling::Styles::styled()
     .placeholder(styling::AnsiColor::Cyan.on_default());
 
 #[derive(Parser)]
-#[command(name = "boilertex")]
 #[command(
-    about = "Generate TeX project boilerplate",
+    about = "Generate LaTeX project boilerplate",
     long_about = "A utility to declaratively create LaTeX boilerplate from templates",
+    name = "boilertex",
     styles = STYLES,
     version,
 )]
