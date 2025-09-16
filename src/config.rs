@@ -74,6 +74,6 @@ pub fn read_config_to_string() -> String {
         }
     }
 
-    // It is safe to unwrap beacuse the situatio has already been handled
+    // It is safe to unwrap beacuse the situation has already been handled
     read_to_string(config_file_path).unwrap()
 }

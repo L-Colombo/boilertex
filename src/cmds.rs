@@ -98,7 +98,7 @@ fn output_template(cfg: &Config, template_name: &String) -> std::io::Result<Stri
         };
 
         Ok(format!(
-            "{documentclass_slot}\n\n{packages_slot}\n\n{bibfile_slot}\n\n\\begin{{document}}\n\n\\end{{document}}"
+            "{documentclass_slot}\n\n{packages_slot}\n\n{bibfile_slot}\n\n\\begin{{document}}\nHello, \\LaTeX\n\\end{{document}}"
         ))
     } else {
         eprintln!(
