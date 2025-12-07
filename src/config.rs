@@ -65,7 +65,7 @@ pub fn read_config_to_string() -> String {
             "[Info]".blue()
         );
 
-        if let Ok(_) = create_default_config_file() {
+        if create_default_config_file().is_ok() {
             println!(
                 "{}: Default config file successfully created at\n\t{}",
                 "[Success]".green(),

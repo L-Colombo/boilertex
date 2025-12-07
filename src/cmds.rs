@@ -62,7 +62,7 @@ fn output_template(cfg: &Config, template_name: &String) -> std::io::Result<Stri
     if let Some(template) = cfg.templates.get(template_name) {
         let complete_class_opts =
             if let Some(template_class_opts) = &template.documentclass.class_opts {
-                vec![
+                [
                     vec![
                         cfg.general_options.papersize.to_owned(),
                         cfg.general_options.textsize.to_owned(),
@@ -72,7 +72,7 @@ fn output_template(cfg: &Config, template_name: &String) -> std::io::Result<Stri
                 .concat()
                 .join(", ")
             } else {
-                vec![
+                [
                     cfg.general_options.papersize.to_owned(),
                     cfg.general_options.textsize.to_owned(),
                 ]
@@ -115,7 +115,7 @@ fn output_template(cfg: &Config, template_name: &String) -> std::io::Result<Stri
     }
 }
 
-const GITIGNORE: &'static str = r#"## Core latex/pdflatex auxiliary files:
+const GITIGNORE: &str = r#"## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
 *.log
