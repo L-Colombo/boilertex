@@ -1,4 +1,4 @@
-use clap::{Args, Parser, Subcommand, arg, builder::styling};
+use clap::{Args, Parser, Subcommand, builder::styling};
 
 const STYLES: styling::Styles = styling::Styles::styled()
     .header(styling::AnsiColor::Green.on_default().bold())
